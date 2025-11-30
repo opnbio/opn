@@ -27,19 +27,9 @@ Because your data lives entirely in your own repo, you **fully own and control i
 
 ### ⚙️ How It Works
 
-You can set up your OPN profile in two ways:
-
-**Option 1: Clone the Starter Template**
-
-1. Fork or clone the [starter template](https://github.com/opnbio/opn-template)
-2. Rename the repo to `.opn`
-3. Edit your `bio.json` to reflect your info (based on the [schema](https://github.com/opnbio/opn-docs/blob/main/schema.md))
-
-**Option 2: Create It Manually**
-
 1. Create a new public repository named `.opn`
-2. Add a `bio.json` file inside it
-3. Fill in your data according to the [schema](https://github.com/opnbio/opn-docs/blob/main/schema.md)
+2. Add a `bio.json` file inside it (you can copy it from [here](https://github.com/remvze/opn/blob/main/template/bio.json))
+3. Fill in your data according to the [schema](https://github.com/remvze/opn/blob/main/docs/schema.md)
 
 Then visit your profile at:
 
