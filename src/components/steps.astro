@@ -8,7 +8,7 @@ import Section from './section.astro';
       <div class="count">
         <span class="one">01</span>
       </div>
-      <h3 class="title">Create a repository</h3>
+      <h3 class="title"><span class="one">Create a repository</span></h3>
       <p class="desc">
         Create a public repository in your GitHub account called
         <code>.opn</code>
@@ -18,7 +18,7 @@ import Section from './section.astro';
       <div class="count">
         <span class="two">02</span>
       </div>
-      <h3 class="title">Add a file</h3>
+      <h3 class="title"><span class="two">Add a file</span></h3>
       <p class="desc">
         Add a <code>bio.json</code> file inside the your <code>.opn</code> repository.
         You can copy the base from <a
@@ -32,7 +32,7 @@ import Section from './section.astro';
       <div class="count">
         <span class="three">03</span>
       </div>
-      <h3 class="title">Enter your info</h3>
+      <h3 class="title"><span class="three">Enter your info</span></h3>
       <p class="desc">
         Based on the <a
           href="https://github.com/remvze/opn/blob/main/docs/schema.md"
@@ -41,13 +41,18 @@ import Section from './section.astro';
         >, fill <code>bio.json</code> with your information.
       </p>
     </li>
+    <li>
+      <div class="count">
+        <span class="four">04</span>
+      </div>
+      <h3 class="title"><span class="four">Your profile is ready</span></h3>
+      <p class="desc">
+        Your bio page will be generated automatically and available at <code
+          >opn.bio/@your-github-username</code
+        >.
+      </p>
+    </li>
   </ol>
-
-  <p class="outro">
-    That’s it! Your bio page will be generated automatically and available at <code
-      >opn.bio/@your-github-username</code
-    >.
-  </p>
 </Section>
 
 <style>
@@ -85,7 +90,6 @@ import Section from './section.astro';
   }
 
   .steps {
-    margin-bottom: 32px;
     list-style: none;
 
     & li {
@@ -121,6 +125,11 @@ import Section from './section.astro';
             color: #51cf66;
             box-shadow: inset 0 -1px 0 rgb(81 207 102 / 75%);
           }
+
+          &.four {
+            color: #339af0;
+            box-shadow: inset 0 -1px 0 rgb(51 154 240 / 75%);
+          }
         }
       }
 
@@ -131,7 +140,36 @@ import Section from './section.astro';
       & .title {
         margin-bottom: 4px;
         font-weight: 500;
-        color: var(--color-foreground);
+
+        & span {
+          --color: red;
+
+          color: var(--color-foreground);
+          background-image: linear-gradient(
+            135deg,
+            var(--color),
+            var(--color-foreground),
+            var(--color-foreground)
+          );
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          &.one {
+            --color: #ff922b;
+          }
+
+          &.two {
+            --color: #f06595;
+          }
+
+          &.three {
+            --color: #51cf66;
+          }
+
+          &.four {
+            --color: #339af0;
+          }
+        }
       }
 
       & .desc {
