@@ -154,6 +154,10 @@ import Section from './section.astro';
           background-clip: text;
           -webkit-text-fill-color: transparent;
 
+          &::selection {
+            -webkit-text-fill-color: var(--color-foreground);
+          }
+
           &.one {
             --color: #ff922b;
           }
