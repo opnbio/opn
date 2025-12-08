@@ -1,20 +1,25 @@
 import { useCallback, useEffect, useState } from 'react';
 import { MdArrowOutward } from 'react-icons/md';
+import { IoEye } from 'react-icons/io5';
 
 import { Container } from '../container';
-import type { Profile as IProfile } from '@/types/profile';
 
 import styles from './profile.module.css';
 import { cn } from '@/helpers/styles';
 import { ProfileSchema } from '@/validators/profile';
+import type { z } from 'zod/mini';
+import { padNumber } from '@/helpers/number';
 
 interface ProfileProps {
   source: string;
   username: string;
+  visits: number;
 }
 
-export function Profile({ source, username }: ProfileProps) {
-  const [profile, setProfile] = useState<IProfile | null>(null);
+export function Profile({ source, visits }: ProfileProps) {
+  const [profile, setProfile] = useState<z.infer<typeof ProfileSchema> | null>(
+    null,
+  );
   const [errors, setErrors] = useState<
     Array<{ message: string; path: string }>
   >([]);
@@ -99,12 +104,12 @@ export function Profile({ source, username }: ProfileProps) {
           <h1 className={styles.name}>{profile.name}</h1>
           <p className={styles.description}>{profile.description}</p>
 
-          <a
-            className={styles.profileLink}
-            href={`https://opn.bio/@${username}`}
-          >
-            opn.bio/<strong>@{username}</strong>
-          </a>
+          <div className={styles.profileVisits}>
+            <span>
+              <IoEye />
+            </span>
+            <strong>{padNumber(visits, 4)}</strong>
+          </div>
         </header>
         <main>
           {profile.sections &&

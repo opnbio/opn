@@ -30,9 +30,13 @@ export async function incrementOrCreateVisit(username: string) {
   const profile = await findByUsername(username);
 
   if (!profile) {
-    await db.insert(profilesTable).values({ username, visits: 1 });
+    await db.insert(profilesTable).values({ username, visits: 1 }).returning();
+
+    return 1;
   } else {
-    await incrementVisits(username);
+    const visits = await incrementVisits(username);
+
+    return visits;
   }
 }
 

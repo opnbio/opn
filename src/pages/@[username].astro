@@ -17,5 +17,10 @@ if (!source) {
 ---
 
 <Layout title="Profile">
-  <Profile client:load source={source} username={username} />
+  <Profile
+    client:load
+    source={source.url}
+    username={username}
+    visits={source.visits}
+  />
 </Layout>
