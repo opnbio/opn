@@ -19,15 +19,21 @@
     "release": "standard-version --no-verify",
     "release:major": "npm run release -- --release-as major",
     "release:minor": "npm run release -- --release-as minor",
-    "release:patch": "npm run release -- --release-as patch"
+    "release:patch": "npm run release -- --release-as patch",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.6.12",
     "@astrojs/react": "4.4.2",
     "@astrojs/sitemap": "3.6.0",
+    "@neondatabase/serverless": "1.0.2",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "5.16.1",
+    "dotenv": "17.2.3",
+    "drizzle-orm": "0.45.0",
     "framer-motion": "11.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
